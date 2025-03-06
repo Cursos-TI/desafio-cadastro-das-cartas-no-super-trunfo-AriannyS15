@@ -7,27 +7,41 @@
 //Teste larissa
 
 int main() {
-    
-     // Declarando Variavel Carta 1
+
+    // Declarando Variavel
+
     char estado;
-    char codigo;
-    char cidade; 
+    int codigo;
+    char nome_cidade[100];
     int populacao;
     int pontoturistico;
     float area;
     float pib;
     float desidadepopulacional;
-    float pibpercapita;
+    float pibpercapta;
 
-    //Colocando Os Dados Da Cidade
-    printf  ("Digite seu estado: \n");
-    scanf ("%c", &estado);
+    // Declarando Variavel Carta 2
+    char estado_2;
+    int codigo_2;
+    char nome_cidade_2[100];
+    int populacao_2;
+    int pontoturistico_2;
+    float area_2;
+    float pib_2;
+    float desidadepopulacional_2;
+    float pibpercapta_2;
 
-    printf ("Codigo Da Cidade: \n");
-    scanf ("%s", &codigo);
+
+    //carta 1
+    printf("Carta 1\n");
+    printf  ("Digite a letra do estado: \n");
+    scanf("%c", &estado);
+
+    printf("Digite o número da cidade: ");
+    scanf("%d", &codigo);
 
     printf ("Nome Da Cidade: \n");
-    scanf("%s", &cidade);
+    scanf("%s", &nome_cidade);
 
     printf ("Total De Habitantes: \n");
     scanf ("%d", &populacao);
@@ -41,47 +55,23 @@ int main() {
     printf ("pib: \n");
     scanf ("%f", &pib);
 
-    printf ("Carta 1! \n");
-    printf ("Estado: %c \n", estado);
-    printf ("codigo da cidade: %c \n", cidade);
-    printf ("cidade: %c \n", cidade);
-    printf ("Habitantes: %d \n", populacao);
-    printf ("Pontos Turisticos: %d \n", pontoturistico);
-    printf ("Area: %f \n", area);
-    printf ("Pib: %f \n", pib);
+//carta 2
+    printf("\n");
+    printf("Carta 2\n");
+    printf ("Digite a letra do estado: \n");
+    scanf(" %c", &estado_2);
 
-    desidadepopulacional = (populacao / area);
-    printf ("A Desidade Populacional é: %.2f \n", desidadepopulacional);
-
-    pibpercapita = (pib / populacao);
-    printf ("Pib Per Carpital é: %.2f",pibpercapita);
-
-    //   Declarando Variavel Carta 2
-
-    char estado_2;
-    char codigo_2;
-    char cidade_2;
-    int populacao_2;
-    int pontoturistico_2;
-    float area_2;
-    float pib_2;
-    float desidadepopulaciona_2;
-    float pibpercapital_2;
-
-    printf  ("Digite seu estado: \n");
-    scanf ("%c", &estado_2);
-
-    printf ("Codigo Da Cidade: \n");
-    scanf ("%c", &codigo_2);
+    printf("Digite o número da cidade: \n");
+    scanf("%d", &codigo_2);
 
     printf ("Nome Da Cidade: \n");
-    scanf("%c", &cidade_2);
+    scanf("%s", &nome_cidade_2);
 
     printf ("Total De Habitantes: \n");
     scanf ("%d", &populacao_2);
 
     printf ("Quantidade De Pontos Turisticos: \n");
-    scanf("%d", &pontoturistico_2);
+    scanf ("%d", &pontoturistico_2);
 
     printf ("Area: \n");
     scanf ("%f", &area_2);
@@ -89,22 +79,38 @@ int main() {
     printf ("pib: \n");
     scanf ("%f", &pib_2);
 
-    printf("Carta 2! \n");
-    printf("Estado_2 %c \n", estado_2);
-    printf("Codigo_2 %c \n", codigo_2);
-    printf("Cidade_2 %c \n", cidade_2);
-    printf("Habitantes_2 %d \n", populacao_2);
-    printf("pontoturistico_2 %d \n", pontoturistico_2);
-    printf("area_2 %f \n", area_2);
-    printf("pib_2 %f \n", pib_2);
+    //calculando densidade e pib per capta das 2 cartas
 
-    desidadepopulaciona_2 = (populacao_2 / area_2);
-    printf ("A Desidade Populacional é: %.2f \n", desidadepopulaciona_2);
+    desidadepopulacional = (float)populacao / area;
 
-    pibpercapital_2 = (pib_2 / populacao_2);
-    printf ("Pib Per Carpital é: %.2f", pibpercapital_2);
+    pibpercapta = pib / (float)populacao;
 
+    desidadepopulacional_2 = (float)populacao_2 / area_2;
 
-    return 0;
-}
+    pibpercapta_2 = pib_2 / (float)populacao_2;
    
+    // Imprimindo dados dass 2 cartas
+    printf("\n");
+    printf("-----Dados-----");
+    printf ("Carta 1! \n");
+    printf("Codigo da cidade: %c%d \n", estado, codigo);
+    printf ("Habitantes: %d \n", populacao);
+    printf ("Pontos Turisticos: %d \n", pontoturistico);
+    printf ("Area: %f \n", area);
+    printf ("Pib: %f \n", pib);
+    printf("Pib Per Capital é: %.4f\n", pibpercapta);
+    printf ("A Desidade Populacional é: %.2f \n", desidadepopulacional);
+
+
+    printf ("Carta 2! \n");
+    printf("Codigo da cidade: %c%d \n", estado_2, codigo_2);
+    printf ("cidade: %s \n", nome_cidade_2);
+    printf ("Habitantes: %d \n", populacao_2);
+    printf ("Pontos Turisticos: %d \n", pontoturistico_2);
+    printf ("Area: %f \n", area_2);
+    printf ("Pib: %f \n", pib_2);
+    printf ("Pib Per Capital é: %.4f \n", pibpercapta_2);
+    printf ("A Desidade Populacional é: %.2f \n", desidadepopulacional_2);
+   
+    printf("Fim do programa\n");
+}
