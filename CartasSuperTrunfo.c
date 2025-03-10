@@ -113,4 +113,6 @@ int main() {
     printf ("A Desidade Populacional é: %.2f \n", desidadepopulacional_2);
    
     printf("Fim do programa\n");
+
+    return 0;
 }
